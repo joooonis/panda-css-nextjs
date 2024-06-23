@@ -1,19 +1,28 @@
-import { css, cx } from "../../styled-system/css";
-import Button from "./components/button";
+import { center, flex } from "@/styled-system/patterns";
 
-const flexCol = css({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
+const flexCol = flex({
+  direction: "column",
+  justify: "center",
+  align: "center",
+  bg: "primary.300",
 });
 
 export default function Home() {
-  console.log("flexCol class names", flexCol);
   return (
-    <div className={cx(css({ gap: "4" }), flexCol)}>
+    <div className={flexCol}>
       Hello 🐼!
-      <Button>Click me</Button>
+      <p
+        className={center({
+          bg: "primary.900",
+          p: 36,
+          m: 12,
+          borderRadius: "xxl",
+          color: "white",
+          fontSize: 24,
+        })}
+      >
+        Center
+      </p>
     </div>
   );
 }
